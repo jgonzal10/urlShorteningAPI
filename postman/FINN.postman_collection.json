@@ -1,0 +1,163 @@
+{
+  "info": {
+    "_postman_id": "6cd6d70b-521f-405e-ae88-6bec5037ed1d",
+    "name": "FINN",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "9043118"
+  },
+  "item": [
+    {
+      "name": "encodeInvalid",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"url\":\"invalid\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/encode",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["encode"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "internalServerError",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"url\":{{invalidURL}}\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/encode",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["encode"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "encodeInvalidUrlType",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"url\":1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/encode",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["encode"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "decode",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"url\":{{shortenedURL}}\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/decode",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["decode"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "decodeNotFound",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"url\":{{notFoundURL}}\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/decode",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["decode"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "encode",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"url\":{{originalURL}}\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/encode",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["encode"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

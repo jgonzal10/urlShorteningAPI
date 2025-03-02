@@ -1,0 +1,80 @@
+openapi: 3.0.3
+info:
+  title: Encode Decode API Documentation
+  description: |-
+  contact:
+    email: jgonzal10@gmail.com
+  version: 1.0.11
+tags:
+  - name: encodedecode
+    description: API that helps encoding and decoding urls
+paths:
+  /encode:
+    post:
+      summary: Encode endpoint
+      requestBody:
+          description: Enpoint to encode a URL
+          required: true
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  url:
+                    type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  shortenedURL:
+                    type: string
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+  /decode:
+    get:
+      tags:
+        - decode
+      summary: decode url
+      description: Endpoint that decode a shortenend URL
+      operationId: decode
+      parameters:
+        - in: query
+          name: user
+          description: URL to be decoded
+          schema:
+            type: object
+            required:
+              - url
+            properties:
+              url:
+                type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  origialURL:
+                    type: string
+        '404':
+          description: URL not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string

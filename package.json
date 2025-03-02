@@ -1,0 +1,48 @@
+{
+  "name": "urlshortening",
+  "version": "1.0.0",
+  "description": "URL shortening Service",
+  "main": "src/server.ts",
+  "autor": "Jennifer Gonzalez Alzate",
+  "scripts": {
+    "test": "jest",
+    "build": "npx tsc",
+    "start": "node dist/server.js",
+    "lint": "eslint .",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
+  },
+  "keywords": [
+    "Node",
+    "Typescript",
+    "TDD"
+  ],
+  "author": "Jennifer Gonzalez Alzate",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "@types/express": "^5.0.0",
+    "@types/jest": "^29.5.14",
+    "@types/supertest": "^6.0.2",
+    "@types/swagger-ui-express": "^4.1.7",
+    "@typescript-eslint/eslint-plugin": "^8.24.0",
+    "@typescript-eslint/parser": "^8.24.0",
+    "eslint": "^9.20.1",
+    "globals": "^15.15.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.5.1",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.24.0",
+    "uuid": "^11.0.5"
+  },
+  "dependencies": {
+    "@types/body-parser": "^1.19.5",
+    "@types/node": "^22.13.1",
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "log4js": "^6.9.1",
+    "swagger-ui-express": "^5.0.1",
+    "ts-node": "^10.9.2"
+  }
+}
