@@ -8,8 +8,15 @@ export const encodeURL = (
 ): string | Error => {
   if (isValidURL(originalURL) && originalURL) {
     const originalURLBase64 = Buffer.from(originalURL).toString("base64");
-    const uniqueCode = originalURLBase64.slice(0, 6);
+    let uniqueCode = originalURLBase64.slice(0, 6);
     const shortenedURL = `${shortDomain}${uniqueCode}`;
+    let collisionCounter = 0;
+    // Check for collision or if the unicode already exists, if the code already exist then create a new one
+    while (database.has(uniqueCode)) {
+      collisionCounter++;
+      const newUniqueCode = originalURLBase64.slice(0, 6 + collisionCounter);
+      uniqueCode = newUniqueCode;
+    }
 
     database.set(uniqueCode, originalURL);
     return shortenedURL;
